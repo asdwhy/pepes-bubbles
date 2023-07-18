@@ -9,11 +9,12 @@ services:
       - '80:80'
       - '443:443'
     volumes:
-      - ../client:/var/www/html
+      - ../client/build:/var/www/html
       - ./frontend/default.conf:/etc/nginx/sites-available/default
       - /etc/letsencrypt:/etc/letsencrypt
     depends_on:
       - server
+    restart: unless-stopped
   server: 
     container_name: server
     image: node:12-alpine
@@ -33,7 +34,9 @@ services:
       - MONGO_INITDB_DATABASE=pepesbubblesDB
     volumes:
       - ./mongodb/mongo-init.js:/docker-entrypoint-initdb.d/mongo-init.js:ro
+    restart: unless-stopped
   memcached:
     container_name: memcached
     image: memcached
+    restart: unless-stopped
   

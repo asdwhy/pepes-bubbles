@@ -1,8 +1,8 @@
 module.exports = {
     PORT: 80,
     SESSION_SECRET: "evenmoreinsanelysecretabsolutelynooneknows",
-    SERVER_HOST: "https://www.pepesbubbles.me/api",
-    CLIENT_HOST: "https://www.pepesbubbles.me",
+    SERVER_HOST: "https://pepesbubbles.joshuacarrasco.com/api",
+    CLIENT_HOST: "https://pepesbubbles.joshuacarrasco.com",
     MONGO_OPTIONS: {
         PROTOCOL: "",
         HOST: "",
